@@ -8,7 +8,7 @@ import { Task } from './task.model';
     <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
     <h3>{{currentFocus}}</h3>
     <hr>
-    <task-list [childTaskList]="masterTaskList"> </task-list>
+    <task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"> </task-list>
     <div *ngIf="selectedTask">
       <h3>{{selectedTask.description}}</h3>
       <p>Task Complete? {{selectedTask.done}}</p>
